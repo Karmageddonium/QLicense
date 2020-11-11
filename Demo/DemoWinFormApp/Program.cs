@@ -8,6 +8,7 @@ namespace DemoWinFormApp
 {
     static class Program
     {
+        //19QFS2F-1907DJ6-YX80HI-ZATUP2
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

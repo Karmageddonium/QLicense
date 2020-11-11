@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 
 namespace DemoLicense
 {
-    public class MyLicense : QLicense.LicenseEntity
+    public class MyLicense : LicenseEntity
     {
         [DisplayName("Enable Feature 01")]
         [Category("License Options")]        
