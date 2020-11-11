@@ -45,8 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\QLicense\QLicense.csproj">
-      <Project>{1980e43f-c5e4-4a2b-95a6-1aebdc7ee2b7}</Project>
-      <Name>QLicense</Name>
+      <Project>{35fc2bd2-e3ae-43c3-b97c-8faeb907476a}</Project>
+      <Name>QLicenseNetStandart</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

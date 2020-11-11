@@ -106,13 +106,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\QLicense\QLicense.csproj">
-      <Project>{1980e43f-c5e4-4a2b-95a6-1aebdc7ee2b7}</Project>
-      <Name>QLicense</Name>
-    </ProjectReference>
+    <None Include="ActivationControls4Win.snk" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ActivationControls4Win.snk" />
+    <ProjectReference Include="..\QLicense\QLicense.csproj">
+      <Project>{35fc2bd2-e3ae-43c3-b97c-8faeb907476a}</Project>
+      <Name>QLicenseNetStandart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
