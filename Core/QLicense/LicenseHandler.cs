@@ -42,10 +42,8 @@ namespace QLicense
             //Get RSA key from certificate
             X509Certificate2 cert = new X509Certificate2(certPrivateKeyData, certFilePwd);
 
-            RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PrivateKey;
-
             //Sign the XML
-            SignXML(_licenseObject, rsaKey);
+            SignXML(_licenseObject, cert.GetRSAPrivateKey());
 
             //Convert the signed XML into BASE64 string            
             return Convert.ToBase64String(Encoding.UTF8.GetBytes(_licenseObject.OuterXml));
@@ -71,7 +69,6 @@ namespace QLicense
             {
                 //Get RSA key from certificate
                 X509Certificate2 cert = new X509Certificate2(certPubKeyData);
-                RSACryptoServiceProvider rsaKey = (RSACryptoServiceProvider)cert.PublicKey.Key;
 
                 XmlDocument xmlDoc = new XmlDocument();
 
@@ -80,7 +77,7 @@ namespace QLicense
                 xmlDoc.LoadXml(Encoding.UTF8.GetString(Convert.FromBase64String(licenseString)));
 
                 // Verify the signature of the signed XML.            
-                if (VerifyXml(xmlDoc, rsaKey))
+                if (VerifyXml(xmlDoc, cert.GetRSAPublicKey()))
                 {
                     XmlNodeList nodeList = xmlDoc.GetElementsByTagName("Signature");
                     xmlDoc.DocumentElement.RemoveChild(nodeList[0]);
